@@ -1,0 +1,175 @@
+ * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    background-color: #1a1a1a;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0 40px 0;
+    height: 220vh;
+  }
+
+  h1{
+   text-align: center;
+   color: #ffa500;
+   font-size: 3rem;
+   font-weight: bold;
+   text-shadow: 0px 10 10px rgba(0,0,0,0.8);
+  }
+  button:hover {
+    background-color: #ffa500;
+    color: #3f1a1a;
+  }
+  
+  .container {
+    background-color: #3f1a1a;
+    width: 360px;
+    padding: 30px 25px 40px 25px;
+    box-shadow: 0 0 15px 3px #4a0f0f;
+    border-radius: 0;
+  }
+  h1 {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.2;
+    margin: 0 0 15px 0;
+    letter-spacing: 0;
+  }
+  hr {
+    border: none;
+    border-top: 1px solid #6a3a3a;
+    margin: 0 0 20px 0;
+  }
+  label {
+    font-size: 13px;
+    font-weight: 400;
+    margin-bottom: 5px;
+    display: block;
+  }
+  select, input[type="text"], input[type="email"], input[type="password"] {
+    background-color: transparent;
+    border: 1.5px solid #ffa500;
+    color: white;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 8px 10px;
+    outline: none;
+    width: 100%;
+    margin-bottom: 12px;
+  }
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('https://placehold.co/12x12/ffa500/ffa500.png'); /* placeholder for arrow */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px 12px;
+  }
+  .row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 12px;
+  }
+  .row > * {
+    flex: 1;
+  }
+  .small-input {
+    max-width: 110px;
+  }
+  .checkbox-row {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    gap: 6px;
+  }
+  .checkbox-row input[type="checkbox"] {
+    width: 14px;
+    height: 14px;
+    margin: 0;
+    cursor: pointer;
+  }
+  .terms {
+    color: #ffcc00;
+    font-weight: 600;
+  }
+  .captcha-container {
+    background-color: #2a1a1a;
+    border: 1px solid #6a3a3a;
+    padding: 15px 10px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  .captcha-box {
+    width: 100%;
+    max-width: 300px;
+    background-color: white;
+    border-radius: 4px;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .captcha-checkbox {
+    width: 20px;
+    height: 20px;
+  }
+  .captcha-text {
+    font-size: 14px;
+    color: #222;
+    user-select: none;
+  }
+  .captcha-logo {
+    margin-left: auto;
+    font-size: 10px;
+    color: #555;
+    text-align: right;
+    line-height: 1.1;
+  }
+  .captcha-logo a {
+    color: #555;
+    text-decoration: none;
+  }
+  .buttons {
+    display: flex;
+    gap: 15px;
+  }
+  button {
+    flex: 1;
+    background-color: transparent;
+    border: 2px solid #ffa500;
+    color: #ffa500;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 10px 0;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+  button:hover {
+    background-color: #ffa500;
+    color: #3f1a1a;
+  }
+  @media (max-width: 400px) {
+    .container {
+      width: 95vw;
+      padding: 20px 15px 30px 15px;
+    }
+    .row {
+      flex-direction: column;
+    }
+    .row > * {
+      max-width: 100% !important;
+    }
+    .buttons {
+      flex-direction: column;
+    }
+    button {
+      width: 100%;
+    }
+  }
