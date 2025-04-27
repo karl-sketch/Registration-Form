@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Register as New Account
+  </title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&amp;display=swap" rel="stylesheet"/>
+  <style>
+   * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    background-color: #121416;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+  }
+  .container {
+    max-width: 420px;
+    margin: 40px auto 40px auto;
+    background-color: #3f1a1a;
+    padding: 30px 30px 40px 30px;
+    border-radius: 0;
+    box-shadow: inset 0 0 100px 20px #6a1a1a;
+  }
+  h1 {
+    font-weight: 400;
+    font-size: 22px;
+    margin: 0 0 15px 0;
+    letter-spacing: 0.02em;
+  }
+  hr {
+    border: none;
+    border-top: 1px solid #6a1a1a;
+    margin: 0 0 20px 0;
+  }
+  .nbi-clearance {
+    font-weight: 700;
+    font-size: 12px;
+    margin-bottom: 10px;
+    line-height: 1.3;
+    letter-spacing: 0.02em;
+  }
+  .nbi-clearance label {
+    font-weight: 700;
+    font-size: 12px;
+    margin-left: 6px;
+    color: #f5a623;
+    cursor: pointer;
+  }
+  .nbi-clearance input[type="checkbox"] {
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+  .nbi-clearance .no-label {
+    margin-left: 12px;
+  }
+  .form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+  }
+  .form-row.birthdate {
+    gap: 10px;
+  }
+  label {
+    font-weight: 400;
+    font-size: 14px;
+    margin-bottom: 6px;
+    display: block;
+  }
+  select, input[type="text"], input[type="email"], input[type="password"] {
+    background-color: transparent;
+    border: 1.8px solid #f5a623;
+    color: #bfbfbf;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 8px 10px;
+    border-radius: 0;
+    outline: none;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+  }
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3csvg%20width%3d%2210%22%20height%3d%227%22%20viewBox%3d%220%200%2010%207%22%20fill%3d%22none%22%20xmlns%3d%22http%3a//www.w3.org/2000/svg%22%3e%3cpath%20d%3d%22M1%201L5%206L9%201%22%20stroke%3d%22%23f5a623%22%20stroke-width%3d%222%22/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 10px 7px;
+    cursor: pointer;
+  }
+  select:focus, input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+    border-color: #f5a623;
+    color: white;
+  }
+  input::placeholder {
+    color: #7a5a2a;
+  }
+  .birthdate select {
+    flex: 1;
+  }
+  .input-half {
+    width: 48%;
+  }
+  .checkbox-terms {
+    font-weight: 700;
+    font-size: 14px;
+    margin: 20px 0 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .checkbox-terms input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+  }
+  .checkbox-terms span {
+    color: #f5a623;
+    cursor: pointer;
+  }
+  .captcha-container {
+    margin-bottom: 20px;
+  }
+  .captcha-box {
+    background: white;
+    border-radius: 4px;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+  }
+  .captcha-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .captcha-left input[type="checkbox"] {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+  }
+  .captcha-left label {
+    font-size: 14px;
+    color: #222;
+    user-select: none;
+  }
+  .captcha-right {
+    text-align: right;
+    font-size: 10px;
+    color: #222;
+    font-family: Arial, sans-serif;
+  }
+  .captcha-right a {
+    color: #222;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  .buttons {
+    display: flex;
+    gap: 20px;
+  }
+  button {
+    flex: 1;
+    background: transparent;
+    border: 2px solid #f5a623;
+    color: #f5a623;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 10px 0;
+    cursor: pointer;
+    letter-spacing: 0.05em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  button:hover {
+    background-color: #f5a623;
+    color: #3f1a1a;
+  }
+  @media (max-width: 480px) {
+    .form-row {
+      flex-direction: column;
+    }
+    .form-row.birthdate {
+      flex-direction: row;
+      gap: 10px;
+    }
+    .input-half {
+      width: 100%;
+    }
+    .buttons {
+      flex-direction: column;
+    }
+    button {
+      width: 100%;
+    }
+  }
+  </style>
+ </head>
+ <body>
+  <div aria-label="Register as new account form" class="container" role="main">
+   <h1>
+    REGISTER AS NEW ACCOUNT
+   </h1>
+   <hr/>
+   <div aria-label="NBI clearance question" class="nbi-clearance">
+    DO YOU HAVE AN NBI CLEARANCE ISSUED FROM 2006 TO PRESENT?
+     <br>
+    <input aria-checked="false" id="yes" name="nbi" type="checkbox"/>
+    <label for="yes">YES
+    </label>
+    <input aria-checked="true" checked="" id="no" name="nbi" type="checkbox"/>
+    <label class="no-label" for="no">NO
+    </label>
+   </div>
+   <div aria-label="Select gender and civil status" class="form-row" required="">
+    <select aria-label="Select Gender" >
+     <option disabled="" selected="" value="" >
+      Select Gender
+     </option>
+     <option>
+      Male
+     </option>
+     <option>
+      Female
+     </option>
+     <option>
+      Other
+     </option>
+    </select>
+    <select aria-label="Select Civil Status" required="">
+     <option disabled="" selected="" value="">
+      Civil Status
+     </option>
+     <option>
+      Single
+     </option>
+     <option>
+      Married
+     </option>
+     <option>
+      Widowed
+     </option>
+     <option>
+      Separated
+     </option>
+    </select>
+   </div>
+   <label for="birth-month">
+    Birth Date
+   </label>
+   <div aria-label="Select birth date month day year" class="form-row birthdate">
+    <select aria-label="Select birth month" id="birth-month" required="">
+     <option disabled="" selected="" value="">
+      Month
+     </option>
+     <option>
+      January
+     </option>
+     <option>
+      February
+     </option>
+     <option>
+      March
+     </option>
+     <option>
+      April
+     </option>
+     <option>
+      May
+     </option>
+     <option>
+      June
+     </option>
+     <option>
+      July
+     </option>
+     <option>
+      August
+     </option>
+     <option>
+      September
+     </option>
+     <option>
+      October
+     </option>
+     <option>
+      November
+     </option>
+     <option>
+      December
+     </option>
+    </select>
+    <select aria-label="Select birth day" required="">
+     <option disabled="" selected="" value="">
+      Day
+     </option>
+     <option>
+      1
+     </option>
+     <option>
+      2
+     </option>
+     <option>
+      3
+     </option>
+     <option>
+      4
+     </option>
+     <option>
+      5
+     </option>
+     <option>
+      6
+     </option>
+     <option>
+      7
+     </option>
+     <option>
+      8
+     </option>
+     <option>
+      9
+     </option>
+     <option>
+      10
+     </option>
+     <option>
+      11
+     </option>
+     <option>
+      12
+     </option>
+     <option>
+      13
+     </option>
+     <option>
+      14
+     </option>
+     <option>
+      15
+     </option>
+     <option>
+      16
+     </option>
+     <option>
+      17
+     </option>
+     <option>
+      18
+     </option>
+     <option>
+      19
+     </option>
+     <option>
+      20
+     </option>
+     <option>
+      21
+     </option>
+     <option>
+      22
+     </option>
+     <option>
+      23
+     </option>
+     <option>
+      24
+     </option>
+     <option>
+      25
+     </option>
+     <option>
+      26
+     </option>
+     <option>
+      27
+     </option>
+     <option>
+      28
+     </option>
+     <option>
+      29
+     </option>
+     <option>
+      30
+     </option>
+     <option>
+      31
+     </option>
+    </select>
+    <select aria-label="Select birth year" required="">
+     <option disabled="" selected="" value="">
+      Year
+     </option>
+     <option>
+      2024
+     </option>
+     <option>
+      2023
+     </option>
+     <option>
+      2022
+     </option>
+     <option>
+      2021
+     </option>
+     <option>
+      2020
+     </option>
+     <option>
+      2019
+     </option>
+     <option>
+      2018
+     </option>
+     <option>
+      2017
+     </option>
+     <option>
+      2016
+     </option>
+     <option>
+      2015
+     </option>
+     <option>
+      2014
+     </option>
+     <option>
+      2013
+     </option>
+     <option>
+      2012
+     </option>
+     <option>
+      2011
+     </option>
+     <option>
+      2010
+     </option>
+     <option>
+      2009
+     </option>
+     <option>
+      2008
+     </option>
+     <option>
+      2007
+     </option>
+     <option>
+      2006
+     </option>
+     <option>
+      2005
+     </option>
+    </select>
+   </div>
+   <input aria-label="First Name" placeholder="First Name (Ex. KHARL LAURENCE)" type="text"/>
+   <input aria-label="Middle Name" placeholder="Middle Name" style="margin-top: 15px;" type="text"/>
+   <input aria-label="Surname" placeholder="Surname" style="margin-top: 15px;" type="text"/>
+   <input aria-label="Mobile Number" placeholder="Mobile Number (09XXXXXXXXX)" style="margin-top: 15px;" type="text"/>
+   <input aria-label="Email Address" placeholder="Enter new Email Address" style="margin-top: 15px;" type="email"/>
+   <div class="form-row" style="margin-top: 15px;">
+    <input aria-label="Enter new Password" class="input-half" placeholder="Enter new Password" type="password"/>
+    <input aria-label="Confirm new Password" class="input-half" placeholder="Confirm new Password" type="password"/>
+   </div>
+   <div class="checkbox-terms">
+    <input aria-checked="false" id="terms" type="checkbox"/>
+    <label for="terms">
+     READ and ACCEPT
+     <span>
+      TERMS OF SERVICES
+     </span>
+    </label>
+   </div>
+   <hr/>
+   <div aria-label="reCAPTCHA verification" class="captcha-container">
+    <div class="captcha-box">
+     <div class="captcha-left">
+      <input aria-checked="false" id="robot" type="checkbox"/>
+      <label for="robot">
+       I'm not a robot
+      </label>
+     </div>
+     <div aria-hidden="true" class="captcha-right">
+      <img alt="CAPTCHA placeholder image" height="70" src="/1000023454-removebg-preview.png" style="vertical-align: middle; margin-bottom: 4px;" width="70"/>
+      <div>
+       reCAPTCHA
+       <br/>
+       <a href="#">
+        Privacy - Terms
+       </a>
+      </div>
+     </div>
+    </div>
+   </div>
+   <hr/>
+   <div class="buttons">
+    <button aria-label="Sign Up" type="submit">
+     SIGN UP
+    </button>
+    <button aria-label="Cancel" type="button">
+     CANCEL
+    </button>
+   </div>
+  </div>
+ </body>
+</html>
