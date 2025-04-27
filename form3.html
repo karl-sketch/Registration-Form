@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Register Form</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+<style>
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    background-color: #1a1a1a;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  .container {
+    background: linear-gradient(135deg, #6a0f0f 0%, #3f0a0a 100%);
+    border: 4px solid white;
+    width: 320px;
+    padding: 20px 25px 25px 25px;
+    color: white;
+    box-shadow: inset 0 0 40px #4a0a0a;
+  }
+  h1 {
+    font-weight: 400;
+    font-size: 24px;
+    margin: 0 0 15px 0;
+    letter-spacing: 0.02em;
+  }
+  hr {
+    border: none;
+    border-top: 1px solid #6a0f0f;
+    margin: 0 0 15px 0;
+  }
+  .question {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .question-text {
+    flex: 1 1 auto;
+    max-width: 70%;
+  }
+  .checkbox-group {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    font-weight: 700;
+    user-select: none;
+  }
+  .checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+  }
+  input[type="checkbox"] {
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+  }
+  .checkbox-yes {
+    color: #f5b30a;
+  }
+  .checkbox-no {
+    color: #f5b30a;
+  }
+  input[type="text"], input[type="tel"], select {
+    width: 100%;
+    background-color: #3f0a0a;
+    border: 1.5px solid #f5b30a;
+    color: #f5b30a;
+    font-size: 14px;
+    padding: 8px 10px;
+    margin-bottom: 12px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+  }
+  input::placeholder {
+    color: #f5b30a;
+    font-weight: 400;
+  }
+  label.birth-label {
+    font-size: 13px;
+    font-weight: 400;
+    margin-bottom: 6px;
+    display: block;
+  }
+  .birth-date {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  select {
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #3f0a0a;
+    border: 1.5px solid #f5b30a;
+    color: #f5b30a;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 8px 10px;
+    text-align-last: center;
+  }
+  .birth-date select::-ms-expand {
+    display: none;
+  }
+  .birth-date select option {
+    background-color: #3f0a0a;
+    color: #f5b30a;
+  }
+  .old-id-label {
+    font-size: 13px;
+    font-weight: 400;
+    margin-bottom: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #f5b30a;
+  }
+  .old-id-label .whats-this {
+    font-style: italic;
+    font-size: 11px;
+    font-weight: 400;
+    color: #f5b30a;
+  }
+  hr.bottom-line {
+    border: none;
+    border-top: 1px solid #6a0f0f;
+    margin: 15px 0 15px 0;
+  }
+  button {
+    width: 100%;
+    background-color: transparent;
+    border: 2px solid #f5b30a;
+    color: #f5b30a;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 0;
+    cursor: pointer;
+    letter-spacing: 0.05em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  button:hover,
+  button:focus {
+    background-color: #f5b30a;
+    color: #3f0a0a;
+    outline: none;
+  }
+  @media (max-width: 360px) {
+    .container {
+      width: 90vw;
+      padding: 15px 20px 20px 20px;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="container" role="form" aria-labelledby="register-title">
+    <h1 id="register-title">REGISTER</h1>
+    <hr />
+    <div class="question">
+      <div class="question-text" id="old-nbi-question">DO YOU HAVE AN OLD NBI CLEARANCE ISSUED FROM 2014 TO PRESENT?</div>
+      <div class="checkbox-group" role="group" aria-labelledby="old-nbi-question">
+        <label for="yes">
+          <input type="checkbox" id="yes" name="old-nbi" aria-checked="true" checked />
+          <span class="checkbox-yes">YES</span>
+        </label>
+        <label for="no">
+          <input type="checkbox" id="no" name="old-nbi" aria-checked="false" />
+          <span class="checkbox-no">NO</span>
+        </label>
+      </div>
+    </div>
+    <input type="text" placeholder="First Name (Ex. Kharl, Laurence III)" aria-label="First Name" />
+    <input type="text" placeholder="Surname" aria-label="Surname" />
+    <input type="tel" placeholder="Mobile Number (09XXXXXXXXX)" aria-label="Mobile Number" />
+    <label class="birth-label" for="birth-month">Birth Date</label>
+    <div class="birth-date">
+      <select id="birth-month" aria-label="Birth Month" name="birth-month" >
+        <option value="" selected>▼</option>
+        <option value="01">01</option>
+        <option value="02">02</option>
+        <option value="03">03</option>
+        <option value="04">04</option>
+        <option value="05">05</option>
+        <option value="06">06</option>
+        <option value="07">07</option>
+        <option value="08">08</option>
+        <option value="09">09</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+      </select>
+      <select id="birth-day" aria-label="Birth Day" name="birth-day" >
+        <option value="" selected>▼</option>
+        <option value="01">01</option>
+        <option value="02">02</option>
+        <option value="03">03</option>
+        <option value="04">04</option>
+        <option value="05">05</option>
+        <option value="06">06</option>
+        <option value="07">07</option>
+        <option value="08">08</option>
+        <option value="09">09</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+        <option value="29">29</option>
+        <option value="30">30</option>
+        <option value="31">31</option>
+      </select>
+      <select id="birth-year" aria-label="Birth Year" name="birth-year" >
+        <option value="" selected>▼</option>
+        <option value="2024">2024</option>
+        <option value="2023">2023</option>
+        <option value="2022">2022</option>
+        <option value="2021">2021</option>
+        <option value="2020">2020</option>
+        <option value="2019">2019</option>
+        <option value="2018">2018</option>
+        <option value="2017">2017</option>
+        <option value="2016">2016</option>
+        <option value="2015">2015</option>
+        <option value="2014">2014</option>
+        <option value="2013">2013</option>
+        <option value="2012">2012</option>
+        <option value="2011">2011</option>
+        <option value="2010">2010</option>
+        <option value="2009">2009</option>
+        <option value="2008">2008</option>
+        <option value="2007">2007</option>
+        <option value="2006">2006</option>
+        <option value="2005">2005</option>
+        <option value="2004">2004</option>
+        <option value="2003">2003</option>
+        <option value="2002">2002</option>
+        <option value="2001">2001</option>
+        <option value="2000">2000</option>
+      </select>
+    </div>
+    <label class="old-id-label" for="old-nbi-id">Enter your OLD NBI ID Number <span class="whats-this">What's this?</span></label>
+    <input type="text" id="old-nbi-id" aria-label="Old NBI ID Number" />
+    <hr class="bottom-line" />
+    <button type="submit" aria-label="Proceed with registration">PROCEED</button>
+  </div>
+</body>
+</html>
